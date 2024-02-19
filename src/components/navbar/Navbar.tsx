@@ -10,7 +10,7 @@ const TopNavBar: React.FC = () => {
            <Menu.Item key="2"><Link href="/doctors"> Doctors</Link></Menu.Item>
            <Menu.Item key="3"><Link href="/hospitals">Hospitals</Link></Menu.Item>
            <Menu.Item key="4"><Link href="/diagnostics">Diagnostics</Link></Menu.Item>
-            <Menu.Item key="5"><Link href="/appointments">TeleMedicines & Appoinment</Link></Menu.Item>
+            <Menu.Item key="5"><Link href="/appointment">TeleMedicines & Appoinment</Link></Menu.Item>
             <Menu.Item key="6" >
                 <SigninButton />
             </Menu.Item>
