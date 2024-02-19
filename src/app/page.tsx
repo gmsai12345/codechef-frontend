@@ -1,7 +1,14 @@
 import Image from 'next/image'
-import Navbar from "./components/Navbar"
 export default function Home() {
   return (
-   <Navbar/>
+    <div>
+      <h1>Home</h1>
+      <Image
+        src="/vercel.svg"
+        alt="Vercel Logo"
+        width={72}
+        height={16}
+      />
+    </div>
   )
 }

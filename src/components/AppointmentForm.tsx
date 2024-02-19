@@ -14,8 +14,17 @@ import {
   Row,
   Select,
 } from 'antd';
+import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import axios from "axios";
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const { Option } = Select;
+
+interface AppointmentFormProps {
+  service: string | null;
+  servicesOptions: { value: string; label: string }[];
+}
 
 interface DataNodeType {
   value: string;
@@ -57,38 +66,40 @@ const residences: CascaderProps<DataNodeType>['options'] = [
     ],
   },
   {
-    value:"tamilnadu",
-    label:"Tamil Nadu",
-    children:[
+    value: "tamilnadu",
+    label: "Tamil Nadu",
+    children: [
       {
-        value:"chennai",
-        label:"Chennai",
-        children:[
+        value: "chennai",
+        label: "Chennai",
+        children: [
           {
-            value:"marina",
-            label:"Marina Beach"
+            value: "marina",
+            label: "Marina Beach"
           },
           {
-            value:"kapaleeshwarar",
-            label:"Kapaleeshwarar Temple"
+            value: "kapaleeshwarar",
+            label: "Kapaleeshwarar Temple"
           },
           {
-            value:"valluvar",
-            label:"Valluvar Kottam"
+            value: "valluvar",
+            label: "Valluvar Kottam"
           },
           {
-            value:"fortstgeorge",
-            label:"Fort St. George"
+            value: "fortstgeorge",
+            label: "Fort St. George"
           },
           {
-            value:"guindy",
-            label:"Guindy National Park"
+            value: "guindy",
+            label: "Guindy National Park"
           }
         ]
       }
     ]
   }
 ];
+
+
 
 const formItemLayout = {
   labelCol: {
@@ -114,11 +125,29 @@ const tailFormItemLayout = {
   },
 };
 
-const AppointmentForm: React.FC = () => {
+const AppointmentForm = ({ service, servicesOptions }: AppointmentFormProps) => {
   const [form] = Form.useForm();
+  const stripe = useStripe();
+  const elements = useElements();
+  const publishableKey = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!;
 
-  const onFinish = (values: any) => {
+  const stripePromise = loadStripe(publishableKey);
+
+  const onFinish = async(values: any) => {
     console.log('Received values of form: ', values);
+    const stripe = await stripePromise;
+    const checkoutSession = await axios.post("/api/payment", {
+      data: {
+        amount: 500,
+        service: values.service,
+      },
+    });
+    const result = await stripe!.redirectToCheckout({
+      sessionId: checkoutSession.data.id,
+    });
+    if (result.error) {
+      alert(result.error.message);
+    }
   };
 
   const prefixSelector = (
@@ -152,6 +181,8 @@ const AppointmentForm: React.FC = () => {
     label: website,
     value: website,
   }));
+
+
 
   return (
     <Form
@@ -188,6 +219,20 @@ const AppointmentForm: React.FC = () => {
       >
         <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
       </Form.Item>
+      <Form.Item
+        name="select"
+        label="Select"
+        hasFeedback
+        rules={[{ required: true, message: 'Please select your country!' }]}
+      >
+        <Select placeholder="Please select a service" defaultValue={service}>
+          {servicesOptions.map((service) => (
+            <Option key={service.value} value={service.value}>
+              {service.label}
+            </Option>
+          ))}
+        </Select>
+      </Form.Item>
 
       <Form.Item
         name="description"
@@ -210,29 +255,13 @@ const AppointmentForm: React.FC = () => {
       </Form.Item>
 
       <Form.Item
-      label="DatePicker"
-      name="DatePicker"
-      rules={[{ required: true, message: 'Please input!' }]}
-    >
-      <DatePicker showTime />
-    </Form.Item>
-
-      <Form.Item label="Captcha" extra="We must make sure that your are a human.">
-        <Row gutter={8}>
-          <Col span={12}>
-            <Form.Item
-              name="captcha"
-              noStyle
-              rules={[{ required: true, message: 'Please input the captcha you got!' }]}
-            >
-              <Input />
-            </Form.Item>
-          </Col>
-          <Col span={12}>
-            <Button>Get captcha</Button>
-          </Col>
-        </Row>
+        label="DatePicker"
+        name="DatePicker"
+        rules={[{ required: true, message: 'Please input!' }]}
+      >
+        <DatePicker showTime />
       </Form.Item>
+
 
       <Form.Item
         name="agreement"
@@ -249,9 +278,10 @@ const AppointmentForm: React.FC = () => {
           I have read the <a href="">agreement</a>
         </Checkbox>
       </Form.Item>
+
       <Form.Item {...tailFormItemLayout}>
-        <Button type="dashed" htmlType="submit">
-          Register
+        <Button type="default" htmlType="submit">
+          Pay 500 
         </Button>
       </Form.Item>
     </Form>
