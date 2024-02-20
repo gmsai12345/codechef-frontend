@@ -203,13 +203,12 @@ const AppointmentForm = ({ service, servicesOptions }: AppointmentFormProps) => 
       </Form.Item>
 
       <Form.Item
-        name="residence"
-        label="Habitual Residence"
-        rules={[
-          { type: 'array', message: 'Please select your habitual residence!' },
-        ]}
+        name="place"
+        label="Place"
+        tooltip="Where do you come from?"
+        rules={[{ message: 'Please input your place]!', whitespace: true }]}
       >
-        <Cascader options={residences} />
+        <Input />
       </Form.Item>
 
       <Form.Item
