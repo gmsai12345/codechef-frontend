@@ -57,12 +57,12 @@ const HospitalList: React.FC = () => {
     const router = useRouter();
 
     const data = Array.from({ length: 23 }).map((_, i) => ({
-        href: 'https://www.apollohospitals.com/',
-        title: `Appollo Hospitals ${i}`,
+        href: 'https://ant.design',
+        title: `ant design part ${i}`,
         description:
-            'Established by Dr Prathap C Reddy in 1983, Apollo Healthcare has a robust presence across the healthcare ecosystem. From routine wellness & preventive health care to innovative life-saving treatments and diagnostic services, Apollo Hospitals has touched more than 200 million lives from over 120 countries',
+            'Ant Design, a design language for background applications, is refined by Ant UED Team.',
         content:
-            'Apollo Group constitutes the best hospital in India with over 10,000 beds across 73 hospitals, 5000+ pharmacies, over 300 clinics, 1100+ diagnostic centres and 200+ Telemedicine units.',
+            'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
     }));
 
     const handleSearch = (value: string) => {
