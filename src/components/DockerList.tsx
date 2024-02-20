@@ -146,7 +146,7 @@ const DockerList: FC<DockerListProps> = ({ }) => {
                             />
                         }
                         className='hover:scale-105 transition duration-300 ease-in-out transform hover:shadow-md hover:bg-gray-100 p-5 rounded-lg my-5 mx-5 bg-white shadow-sm active:bg-gray-200 cursor-pointer'
-                        onClick={() => router.push(`${item.firstName}`)}
+                        onClick={() => router.push(`/hospitals`)}
                     >
                         <List.Item.Meta
                             title={<a href={item.firstName}>{item.specialty}</a>}

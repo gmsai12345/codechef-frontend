@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { AutoComplete, Avatar, Card, Col, Flex, Input, Layout, List, Row, Skeleton, Space } from 'antd';
 import type { SelectProps } from 'antd';
 import Meta from 'antd/es/card/Meta';
@@ -10,6 +11,13 @@ import { SearchProps } from 'antd/es/input';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
+interface DataType {
+    title: string
+    description: string
+    content: string
+    image: string
+    href: string
+}
 
 const getRandomInt = (max: number, min = 0) => Math.floor(Math.random() * (max - min + 1)) + min;
 
@@ -56,17 +64,7 @@ const HospitalList: React.FC = () => {
     const { Search } = Input;
     const router = useRouter();
 
-    const data = Array.from({ length: 23 }).map((_, i) => ({
-        href: 'https://www.apollohospitals.com/',
-        title: `Apollo Hospitals ${i}`,
-        description:
-            'Established by Dr Prathap C Reddy in 1983, Apollo Healthcare has a robust presence across the healthcare ecosystem. From routine wellness & preventive health care to innovative life-saving treatments and diagnostic services, Apollo Hospitals has touched more than 200 million lives from over 120 countries',
-        content:
-            'Apollo Group constitutes the best hospital in India with over 10,000 beds across 73 hospitals, 5000+ pharmacies, over 300 clinics, 1100+ diagnostic centres and 200+ Telemedicine units.',
-            image:"https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }));
-
-    const handleSearch = (value: string) => {
+       const handleSearch = (value: string) => {
         setOptions(value ? searchResult(value) : []);
     };
 
@@ -75,6 +73,17 @@ const HospitalList: React.FC = () => {
     };
     const onSearch: SearchProps['onSearch'] = (value, _e, info) => console.log(info?.source, value);
 
+    const { isPending, error, data: response } = useQuery({
+        queryKey: ['repoData'],
+        queryFn: () =>
+            fetch('https://codechef-backend.vercel.app/api/hospitals').then((res) =>
+                res.json(),
+            ),
+    })
+
+    if (isPending) return 'Loading...'
+
+    if (error) return 'An error has occurred: ' + error.message
 
 
     return (
@@ -108,13 +117,13 @@ const HospitalList: React.FC = () => {
                     },
                     pageSize: 3,
                 }}
-                dataSource={data}
+                dataSource={response.data}
                 // footer={
                 //     <div>
                 //         <b>ant design</b> footer part
                 //     </div>
                 // }
-                renderItem={(item) => (
+                renderItem={(item:DataType) => (
                         <List.Item
                             key={item.title}
                             actions={[

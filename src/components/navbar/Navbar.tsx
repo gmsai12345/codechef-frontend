@@ -13,7 +13,7 @@ const TopNavBar: React.FC = () => {
             <Menu.Item key="3"><Link href="/hospitals">Hospitals</Link></Menu.Item>
             <Menu.Item key="4"><Link href="/diagnostics">Diagnostics</Link></Menu.Item>
             <Menu.Item key="5"><Link href="/appointment">TeleMedicines & Appoinment</Link></Menu.Item>
-            <Menu.Item key="6"><Link href="/Medicines">Medicines & HealthCare Devices</Link></Menu.Item>
+            <Menu.Item key="6"><Link href="https://gemini-chatbot-integration-phi.vercel.app/">Chat bot</Link></Menu.Item>
             <Menu.Item key="7" >
                 <Link href="/profile">
                     <SigninButton />

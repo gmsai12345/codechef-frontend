@@ -2,7 +2,8 @@
 import React from 'react';
 import { Card, List } from 'antd';
 import { Typography, Image } from 'antd';
-import { useRouter } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
+import { useQuery } from '@tanstack/react-query';
 
 const hospitalData = [
     {
@@ -32,17 +33,36 @@ const hospitalData = [
 
 const HospitalPage = () => {
     const { Title, Paragraph } = Typography;
+    const params = useParams<{ name: string; }>()
     const router = useRouter();
+
+    const { isPending, error, data: response } = useQuery({
+        queryKey: ['repoData'],
+        queryFn: () =>
+            fetch('https://codechef-backend.vercel.app/api/hospitals').then((res) =>
+                res.json(),
+            ),
+    })
+
+    if (isPending) return 'Loading...'
+
+    if (error) return 'An error has occurred: ' + error.message
+
+    const hospitalData = response.data.filter((hospital) => hospital.title === params.name);
+    console.log(hospitalData, response.data[0].title, params.name);
+
     return (
         <div>
             {hospitalData.map((hospital) => (
                 <div key={hospital.id}>
                     <div>
                         <Image src={hospital.image} alt={hospital.title} style={{ height: '30vh', width: '100vw', objectFit: 'cover' }} />
+                        <div className='flex flex-col items-center'>
                         <Title level={2} style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px' }}>{hospital.title}</Title>
                         <Paragraph style={{ marginBottom: '8px' }}>{hospital.address}</Paragraph>
                         <Paragraph style={{ marginBottom: '16px' }}>{hospital.description}</Paragraph>
                         <Title level={3} style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '16px' }}>Services Offered</Title>
+                        </div>
                     </div>
                     <Card>
                         <List
