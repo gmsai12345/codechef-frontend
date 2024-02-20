@@ -48,12 +48,12 @@ const HospitalPage = () => {
 
     if (error) return 'An error has occurred: ' + error.message
 
-    const hospitalData = response.data.filter((hospital) => hospital.title === params.name);
+    const hospitalData = response.data.filter((hospital:any) => hospital.title === params.name);
     console.log(hospitalData, response.data[0].title, params.name);
 
     return (
         <div>
-            {hospitalData.map((hospital) => (
+            {hospitalData.map((hospital:any) => (
                 <div key={hospital.id}>
                     <div>
                         <Image src={hospital.image} alt={hospital.title} style={{ height: '30vh', width: '100vw', objectFit: 'cover' }} />
@@ -68,7 +68,7 @@ const HospitalPage = () => {
                         <List
                             grid={{ gutter: 16, column: 2 }}
                             dataSource={hospital.services}
-                            renderItem={(service) => (
+                            renderItem={(service:any) => (
                                 <List.Item
                                
                                 className='hover:scale-105 transition duration-300 ease-in-out transform hover:shadow-md hover:bg-gray-100 p-5 rounded-lg my-5 mx-5 bg-white shadow-sm active:bg-gray-200 cursor-pointer'
