@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-family: "Inria Sans", sans-serif;
+  transition: 0.7s;
+  /* overflow-x: hidden; */
+}
+
+body {
+  background-color: #f6f6f6;
+}
+nav {
+  background-color: white;
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: larger;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.btnarea {
+  width: 300px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location {
+  width: 300px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.login,
+.signup {
+  margin: 0 5px;
+  height: 40px;
+  width: 120px;
+  border: none;
+  background-color: #ff8593;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  cursor: pointer;
+}
+.actionname {
+  position: absolute;
+  left: 50%;
+  top: calc(60px + 2%);
+  transform: translate(-50%, -50%);
+  font-weight: 700;
+  font-style: normal;
+}
+.cardarea {
+  position: absolute;
+  width: 100vw;
+  height: 75vh;
+  bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.service-card-one {
+  background-color: white;
+  height: 250px;
+  width: 45%;
+  margin: 10px;
+}
+.service-card-two {
+  background-color: white;
+  height: 250px;
+  width: 22%;
+  margin: 10px;
+}
+.sco-topic {
+  /* position: absolute; */
+  /* top: 50%; */
+  position: relative;
+  top: 30%;
+  left: 10%;
+  transform: translate(0%, -50%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: normal;
+}
+.sco-desc {
+  position: relative;
+  top: 70%;
+  left: 28.5%;
+  height: 150px;
+  width: 250px;
+  transform: translate(-50%, -50%);
+  color: #000000a8;
+  font-weight: 700;
+  font-style: normal;
+}
+.serviceroute1 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: -10%;
+  left: calc(100% - 20%);
+}
+.sct-topic {
+  position: relative;
+  top: 15%;
+  left: 20%;
+  transform: translate(0%, -50%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: normal;
+}
+.sct-desc {
+  position: relative;
+  top: 60%;
+  left: 51%;
+  height: 150px;
+  width: 200px;
+  transform: translate(-50%, -50%);
+  color: #000000a8;
+  font-weight: 700;
+  font-style: normal;
+}
+.serviceroute2 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: -10%;
+  left: calc(100% - 30%);
+}
+.row {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doccardarea {
+  position: absolute;
+  top: 150px;
+  height: 200%;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.doccard{
+  background-color: white;
+  width: 80%;
+  height: 300px;
+  margin: 25px;
+}
+.docimg{
+  /* position: absolute; */
+  position: relative;
+  top: 10%;
+  left: 10%;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-image: url(doc.png);
+}
+.docname{
+  position: relative;
+  top: -20%;
+  left: 50%;
+  font-weight: 700;
+  width: 100px;
+}
+.docjob{
+  position: relative;
+  top: -17.5%;
+  left: 50%;
+  width: 100px;
+}
+.viewprofile{
+  position: relative;
+  text-align: center;
+  top: -12.5%;
+  left: 50%;
+  color: white;
+  background-color:#760E00;
+  width: 100px;
+}
+.docloc{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 10%;
+  top: -5%;
+  width: 100px;
+}
+.rating{
+  width: 300px;
+  display: flex;
+  justify-content: start;
+  position: relative;
+  /* top: 10%; */
+  left: 15%;
+  /* transform: translateX(-50%); */
+}
+.ratecircle{
+  background-color: yellow;
+  height: 10px;
+  width: 10px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.meetdocbtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 140px;
+  color: white;
+  background-color: #ff8593;
+  position: relative;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media screen and (max-width: 1000px) {
+  .service-card-one {
+    background-color: white;
+    height: 250px;
+    width: 22%;
+    margin: 10px;
+  }
+  .sco-topic {
+    position: relative;
+    top: 15%;
+    left: 20%;
+    transform: translate(0%, -50%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .sco-topic,
+  .sct-topic {
+    font-size: 1.3rem;
+  }
+  .sco-desc {
+    position: relative;
+    top: 60%;
+    left: 51%;
+    height: 150px;
+    width: 200px;
+    transform: translate(-50%, -50%);
+    color: #000000a8;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .serviceroute1,
+  .serviceroute2 {
+    height: 50px;
+    width: 200px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: relative;
+    top: 5%;
+    left: 10%;
+  }
+}
+@media screen and (max-width: 820px) {
+  .cardarea {
+    position: absolute;
+    top: 200px;
+    height: 200%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .row {
+    flex-direction: column;
+  }
+  .service-card-one,
+  .service-card-two {
+    width: 80vw;
+  }
+  .login,
+  .signup {
+    width: 40px;
+    text-align: center;
+  }
+  .logo {
+    font-size: small;
+    text-align: center;
+  }
+  nav {
+    height: 50px;
+    /* justify-content: space-evenly; */
+  }
+  .location {
+    width: 150px;
+    padding-right: 17%;
+    height: 50px;
+    flex-direction: row;
+    font-size: small;
+  }
+  .doccardarea {
+    position: absolute;
+    top: 150px;
+    height: 200%;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+  .doccard{
+    background-color: white;
+    width: 80%;
+    height: 300px;
+    margin: 25px;
+  }
+  .docimg{
+    /* position: absolute; */
+    position: relative;
+    top: 10%;
+    left: 10%;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-image: url(doc.png);
+  }
+  .docname{
+    position: relative;
+    top: -20%;
+    left: 50%;
+    font-weight: 700;
+    width: 100px;
+  }
+  .docjob{
+    position: relative;
+    top: -17.5%;
+    left: 50%;
+    width: 100px;
+  }
+  .viewprofile{
+    position: relative;
+    text-align: center;
+    top: -12.5%;
+    left: 50%;
+    color: white;
+    background-color:#760E00;
+    width: 100px;
+  }
+  .docloc{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 10%;
+    top: -5%;
+    width: 100px;
+  }
+  .rating{
+    width: 300px;
+    display: flex;
+    justify-content: start;
+    position: relative;
+    /* top: 10%; */
+    left: 15%;
+    /* transform: translateX(-50%); */
+  }
+  .ratecircle{
+    background-color: yellow;
+    height: 10px;
+    width: 10px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .meetdocbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 140px;
+    color: white;
+    background-color: #ff8593;
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
