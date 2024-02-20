@@ -133,11 +133,11 @@ const medicineStock: MedicineType[] = [
     }
 ];
 
-interface ProfileProps {
+interface DoctorProfileProps {
     session: Session
 }
 
-const Profile: React.FC<ProfileProps> = ({ session }) => {
+const DoctorProfile: React.FC<DoctorProfileProps> = ({ session }) => {
     const { isPending, error, data: response } = useQuery({
         queryKey: ['repoData'],
         queryFn: () =>
@@ -151,7 +151,7 @@ const Profile: React.FC<ProfileProps> = ({ session }) => {
     if (error) return 'An error has occurred: ' + error.message
 
 
-    const finalData: DataType[] = response.data.filter((item: any) => item.user_id === session?.user?.email)
+    const finalData: DataType[] = response.data.filter((item: any) => item.doctor_id === session?.user?.email)
     console.log(session, finalData)
     return (
         <>
@@ -165,4 +165,4 @@ const Profile: React.FC<ProfileProps> = ({ session }) => {
     )
 }
 
-export default Profile;
+export default DoctorProfile;
