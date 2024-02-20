@@ -197,7 +197,7 @@ const AppointmentForm = ({ service, servicesOptions }: AppointmentFormProps) => 
         name="nickname"
         label="Name"
         tooltip="What do you want others to call you?"
-        rules={[{ required: true, message: 'Please input your nickname!', whitespace: true }]}
+        rules={[{ message: 'Please input your nickname!', whitespace: true }]}
       >
         <Input />
       </Form.Item>
@@ -206,7 +206,7 @@ const AppointmentForm = ({ service, servicesOptions }: AppointmentFormProps) => 
         name="residence"
         label="Habitual Residence"
         rules={[
-          { type: 'array', required: true, message: 'Please select your habitual residence!' },
+          { type: 'array', message: 'Please select your habitual residence!' },
         ]}
       >
         <Cascader options={residences} />
@@ -215,7 +215,7 @@ const AppointmentForm = ({ service, servicesOptions }: AppointmentFormProps) => 
       <Form.Item
         name="phone"
         label="Phone Number"
-        rules={[{ required: true, message: 'Please input your phone number!' }]}
+        rules={[{ message: 'Please input your phone number!' }]}
       >
         <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
       </Form.Item>
@@ -223,7 +223,7 @@ const AppointmentForm = ({ service, servicesOptions }: AppointmentFormProps) => 
         name="select"
         label="Select"
         hasFeedback
-        rules={[{ required: true, message: 'Please select your country!' }]}
+        rules={[{  message: 'Please select your country!' }]}
       >
         <Select placeholder="Please select a service" defaultValue={service}>
           {servicesOptions.map((service) => (
@@ -237,7 +237,7 @@ const AppointmentForm = ({ service, servicesOptions }: AppointmentFormProps) => 
       <Form.Item
         name="description"
         label="Description"
-        rules={[{ required: true, message: 'Please input Description' }]}
+        rules={[{  message: 'Please input Description' }]}
       >
         <Input.TextArea showCount maxLength={100} />
       </Form.Item>
@@ -245,7 +245,7 @@ const AppointmentForm = ({ service, servicesOptions }: AppointmentFormProps) => 
       <Form.Item
         name="gender"
         label="Gender"
-        rules={[{ required: true, message: 'Please select gender!' }]}
+        rules={[{  message: 'Please select gender!' }]}
       >
         <Select placeholder="select your gender">
           <Option value="male">Male</Option>
@@ -257,7 +257,7 @@ const AppointmentForm = ({ service, servicesOptions }: AppointmentFormProps) => 
       <Form.Item
         label="DatePicker"
         name="DatePicker"
-        rules={[{ required: true, message: 'Please input!' }]}
+        rules={[{  message: 'Please input!' }]}
       >
         <DatePicker showTime />
       </Form.Item>
