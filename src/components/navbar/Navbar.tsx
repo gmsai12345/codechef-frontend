@@ -1,9 +1,11 @@
 "use client"
 import React from 'react';
-import { Menu } from 'antd';
+import { Avatar, Menu } from 'antd';
 import SigninButton from '../auth/SignInButton';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 const TopNavBar: React.FC = () => {
+    const { data: session } = useSession();
     return (
         <Menu mode="horizontal" >
         <Menu.Item key="1"><Link href="/"> LifeCycle</Link></Menu.Item>
@@ -13,7 +15,9 @@ const TopNavBar: React.FC = () => {
             <Menu.Item key="5"><Link href="/appointment">TeleMedicines & Appoinment</Link></Menu.Item>
             <Menu.Item key="6"><Link href="/Medicines">Medicines & HealthCare Devices</Link></Menu.Item>
             <Menu.Item key="7" >
-                <SigninButton />
+            <Link href="/profile">
+                <Avatar src={'https://images.unsplash.com/placeholder-avatars/extra-large.jpg?bg=fff&crop=faces&dpr=1&h=150&w=150&auto=format&fit=crop&q=60&ixlib=rb-4.0.3'}  />
+            </Link>
             </Menu.Item>
         </Menu>
     );
