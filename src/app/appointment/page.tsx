@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 const hospitalData = [
     {
         id: 1,
-        title: 'ABC Hospital',
+        title: 'Appollo Hospital',
         address: '123 Main Street, City',
         description: 'ABC Hospital is a leading healthcare provider...',
         image: 'https://picsum.photos/536/354',
