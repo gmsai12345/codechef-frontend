@@ -21,57 +21,50 @@ const LandingPage: FC<LandingPageProps> = ({ }) => {
         href: '/hospitals',
         title: `Hospital Services`,
         description:
-            'Explore all the Hospitals and Services Provided By Them',
+            'Explore the comprehensive hospital services available.',
         content:
-            'Explore all the Hospitals and Services Provided By Them',
-            image:'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            'Discover a range of hospital services including emergency care, surgery, and specialized treatments.',
+        image: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
         href: 'https://www.apollohospitals.com/',
         title: `Medicines & Health Products`,
         description:
-            'Purchased Specialized Medicines and Health Products',
+            'Purchase specialized medicines and health products.',
         content:
-            'Purchased Specialized Medicines and Health Products',
-            image:"https://images.unsplash.com/photo-1610740654950-070baeb919ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            'Browse and purchase a variety of specialized medicines and health products to meet your healthcare needs.',
+        image: "https://images.unsplash.com/photo-1610740654950-070baeb919ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         href: 'https://www.apollohospitals.com/',
         title: `Online Appointments`,
         description:
-            'Purchased Specialized Medicines and Health Products',
+            'Book appointments with healthcare professionals online.',
         content:
-            'Purchased Specialized Medicines and Health Products',
-            image:"https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            'Easily schedule and manage your appointments with doctors and specialists through our online platform.',
+        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         href: 'https://www.apollohospitals.com/',
         title: `Health Checkup`,
         description:
-            'Purchased Specialized Medicines and Health Products',
+            'Schedule comprehensive health checkups with ease.',
         content:
-            'Purchased Specialized Medicines and Health Products',
-            image:"https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        href: 'https://www.apollohospitals.com/',
-        title: `Online Appointments`,
-        description:
-            'Get Instant Health Checkups',
-        content:
-            'Get Instant Health Checkups',
-            image:"https://images.unsplash.com/photo-1610740654950-070baeb919ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            'Book comprehensive health checkups to stay on top of your health and detect any potential issues early.',
+        image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         href: 'https://www.apollohospitals.com/',
         title: `Insurance`,
         description:
-            'Avail Latest Insurance policies customized to your needs',
+            'Get the latest insurance policies tailored to your needs.',
         content:
-            'Avail Latest Insurance policies customized to your needs',
-            image:"https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            'Explore and choose from a variety of insurance policies that are customized to fit your individual needs.',
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
 ];
+
+
     return (
         <div className='container mx-auto'>
 
