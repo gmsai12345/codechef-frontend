@@ -27,7 +27,7 @@ const LandingPage: FC<LandingPageProps> = ({ }) => {
         image: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
     },
     {
-        href: 'https://www.apollohospitals.com/',
+        href: 'https://www.apollopharmacy.in/',
         title: `Medicines & Health Products`,
         description:
             'Purchase specialized medicines and health products.',
@@ -36,7 +36,7 @@ const LandingPage: FC<LandingPageProps> = ({ }) => {
         image: "https://images.unsplash.com/photo-1610740654950-070baeb919ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-        href: 'https://www.apollohospitals.com/',
+        href: '/appointment',
         title: `Online Appointments`,
         description:
             'Book appointments with healthcare professionals online.',
@@ -45,7 +45,7 @@ const LandingPage: FC<LandingPageProps> = ({ }) => {
         image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-        href: 'https://www.apollohospitals.com/',
+        href: '/diagnostics',
         title: `Health Checkup`,
         description:
             'Schedule comprehensive health checkups with ease.',
@@ -54,7 +54,7 @@ const LandingPage: FC<LandingPageProps> = ({ }) => {
         image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-        href: 'https://www.apollohospitals.com/',
+        href: 'https://www.cholainsurance.com/health-insurance',
         title: `Insurance`,
         description:
             'Get the latest insurance policies tailored to your needs.',
